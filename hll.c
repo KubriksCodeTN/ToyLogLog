@@ -53,7 +53,7 @@ void add(hll* ll, uint32_t x) {
     MurmurHash3_x86_32(&x, sizeof(uint32_t), 4, &hash);
     uint32_t i = hash >> (8 * sizeof(uint32_t) - ll->bits);
     hash &= ~(i << (8 * sizeof(uint32_t) - ll->bits));
-    uint32_t lz = x ? __builtin_clz(hash) - ll->bits : 8 * sizeof(uint32_t) - ll->bits - 1;
+    uint32_t lz = hash ? __builtin_clz(hash) - ll->bits : 8 * sizeof(uint32_t) - ll->bits - 1;
     ll->buckets[i] = MAX(ll->buckets[i], lz + 1);
 }
 
