@@ -1,1 +1,1 @@
-Simple implementation of the HyperLogLog algorithm in C++
+Simple implementation of the HyperLogLog algorithm in C
